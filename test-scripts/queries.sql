@@ -6,3 +6,18 @@
 
 -- En test med en SQL-spørring mot metadata i PostgreSQL (kan slettes fra din script)
 select nspname as schema_name from pg_catalog.pg_namespace;
+
+SELECT *
+FROM sykkel;
+
+SELECT etternavn, fornavn, mobilnr
+FROM kunde
+ORDER BY etternavn ASC;
+
+SELECT *
+FROM utleie u
+JOIN sykkel s ON u.sykkel_id = s.id
+WHERE u.utleie_tidspunkt > '2023-04-01';
+
+SELECT COUNT(*) AS antall_kunder
+FROM kunde;
